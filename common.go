@@ -17,3 +17,10 @@ type Context struct {
 type Handler interface {
 	Handle(context *Context) (r any, validMethod bool, validParams bool, err error)
 }
+
+type Log interface {
+	Info(string)
+	Infof(string, ...any)
+	Errorf(string, ...any)
+	Fatalf(string, ...any)
+}
